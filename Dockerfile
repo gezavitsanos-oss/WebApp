@@ -18,9 +18,9 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 
 # Copy app code
-COPY WebApp/ ./WebApp/
+COPY WebApp/ .
 
 ENV PYTHONUNBUFFERED=1
 
 # Start FastAPI with Uvicorn
-CMD ["uvicorn", "WebApp.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
